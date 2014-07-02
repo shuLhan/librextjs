@@ -1,0 +1,19 @@
+{
+	"--title"			: "Librextjs"
+,	"--warnings"		:
+	[
+		"-no_doc:src"
+	,	"-no_doc_member:src"
+	,	"-link:src"
+	,	"-type_name:src"
+	]
+,	"--ignore-html"		:
+	[
+		"locale"
+	,	"debug"
+	]
+,	"--images"			: "resources/docs/images"
+,	"--builtin-classes"	: true
+,	"--output"			: "docs"
+,	"--"				: "src"
+}

@@ -1,0 +1,6 @@
+/builds
+/docs
+/node_modules
+/build.xml
+/*.js
+/log

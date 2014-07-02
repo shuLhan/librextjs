@@ -1,0 +1,23 @@
+{
+  "name": "librextjs",
+  "version": "1.0.0",
+  "description": "Librextjs 0.1.1",
+  "author": "ms@kilabit.info",
+  "license": "GPL-3",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:shuLhan/librextjs.git"
+  },
+  "keywords": [
+    "extjs",
+    "librext"
+  ],
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-symlink": "^0.3.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-string-replace": "^0.2.7"
+  }
+}
