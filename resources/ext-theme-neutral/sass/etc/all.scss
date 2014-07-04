@@ -1,0 +1,23 @@
+// This variable only to allow css to be compiled.
+$include-default-uis: true !default;
+
+$base-color: #C0D4ED !default;
+
+$datepicker-base-color: $base-color !default;
+$datepicker-column-header-background-color: adjust-color($datepicker-base-color, $hue: -1.19deg, $saturation: 22.222%, $lightness: 8.824%) !default; //#dfecfb
+$datepicker-border-color: adjust-color($datepicker-base-color, $hue: 5.926deg, $saturation: 4.444%, $lightness: -57.647%) !default; //#1b376c
+$datepicker-item-hover-background-color: adjust-color($datepicker-base-color, $hue: -0.606deg, $saturation: 38.73%, $lightness: 9.02%) !default; //#ddecfe
+$datepicker-item-selected-background-color: adjust-color($datepicker-base-color, $hue: 0.267deg, $saturation: -4.535%, $lightness: 6.275%) !default;
+$datepicker-item-selected-border-color: adjust-color($datepicker-base-color, $hue: 0.853deg, $saturation: 5.008%, $lightness: -11.961%) !default; //#8db2e3
+$datepicker-header-background-color: adjust-color($datepicker-base-color, $hue: 5.768deg, $saturation: 0.419%, $lightness: -52.941%) !default; //#23427c
+$datepicker-column-header-color: adjust-color($datepicker-base-color, $hue: 5.586deg, $saturation: -4.167%, $lightness: -55.882%) !default; //#233d6d
+$datepicker-column-header-border-color: darken($datepicker-column-header-background-color, 10) !default;
+$datepicker-item-today-border-color: darkred !default;
+$datepicker-footer-border-color: $datepicker-column-header-border-color !default;
+
+$form-checkboxgroup-alt-background: adjust-color($base-color, $hue: 2.667deg, $saturation: -7.168%, $lightness: 3.725%) !default;
+$form-checkboxgroup-alt-border-top: 1px dotted adjust-color($base-color, $hue: 17.193deg, $saturation: -40.827%, $lightness: -9.412%) !default;
+$form-checkboxgroup-alt-border-bottom: 1px dotted adjust-color($base-color, $hue: 17.193deg, $saturation: -40.827%, $lightness: -9.412%) !default;
+
+$resizer-handle-size: 6px !default;
+$resizer-handle-border-radius: null !default;

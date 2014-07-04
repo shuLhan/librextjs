@@ -1,3 +1,4 @@
+//{{{ var: source for foundation script
 var src_foundation = [
 	"src/Ext.js"
 ,	"src/version/Version.js"
@@ -13,7 +14,8 @@ var src_foundation = [
 ,	"src/class/Loader.js"
 ,	"src/lang/Error.js"
 ];
-
+//}}}
+//{{{ var: source for core script.
 var src_core = src_foundation.concat ([
 	"src/misc/JSON.js"
 ,	"src/Ext-more.js"
@@ -52,7 +54,8 @@ var src_core = src_foundation.concat ([
 ,	"src/dom/CompositeElementLite.js"
 ,	"src/dom/CompositeElement.js"
 ]);
-
+//}}}
+//{{{ var: source for all script.
 var src_all = src_core.concat ([
 	"src/util/HashMap.js"
 ,	"src/AbstractManager.js"
@@ -507,7 +510,30 @@ var src_all = src_core.concat ([
 ,	"src/util/Grouper.js"
 ,	"src/util/History.js"
 ]);
+//}}}
+//{{{ var: source for neptune theme.
+var src_themes_neptune =
+[
+	"resources/ext-theme-neptune/overrides/Component.js"
+,	"resources/ext-theme-neptune/overrides/panel/Panel.js"
+,	"resources/ext-theme-neptune/overrides/toolbar/Toolbar.js"
+,	"resources/ext-theme-neptune/overrides/layout/component/Dock.js"
+,	"resources/ext-theme-neptune/overrides/container/ButtonGroup.js"
+,	"resources/ext-theme-neptune/overrides/toolbar/Paging.js"
+,	"resources/ext-theme-neptune/overrides/picker/Month.js"
+,	"resources/ext-theme-neptune/overrides/form/field/HtmlEditor.js"
+,	"resources/ext-theme-neptune/overrides/panel/Table.js"
+,	"resources/ext-theme-neptune/overrides/grid/RowEditor.js"
+,	"resources/ext-theme-neptune/overrides/grid/column/RowNumberer.js"
+,	"resources/ext-theme-neptune/overrides/resizer/Splitter.js"
+,	"resources/ext-theme-neptune/overrides/menu/Menu.js"
+,	"resources/ext-theme-neptune/overrides/menu/Separator.js"
+,	"resources/ext-theme-neptune/overrides/panel/Tool.js"
+,	"resources/ext-theme-neptune/overrides/tab/Tab.js"
+];
+//}}}
 
+//{{{ concat config
 function exclude_rtl (f)
 {
 	if (f.indexOf ("/rtl/") === -1) {
@@ -515,7 +541,6 @@ function exclude_rtl (f)
 	}
 	return false;
 }
-
 var remove_banners	=
 {
 	stripBanners	: true
@@ -525,7 +550,8 @@ var include_banners	=
 {
 	stripBanners	: false
 }
-
+//}}}
+//{{{ string-replace debug config
 var replace_debug	=
 {
 	replacements	:
@@ -537,7 +563,8 @@ var replace_debug	=
 	,	replacement		:""
 	}]
 }
-
+//}}}
+//{{{ string-replace comment config
 var replace_comment	=
 {
 	replacements	:
@@ -550,12 +577,12 @@ var replace_comment	=
 //					,	replacement		:""
 	}]
 }
+//}}}
 
 module.exports = function (grunt) {
-	// Project configuration.
 	grunt.initConfig ({
 		pkg		: grunt.file.readJSON ("package.json")
-//{{{ create one single file.
+		//{{{ task: create one single file.
 	,	concat	:
 		{
 			options		: remove_banners
@@ -676,9 +703,41 @@ module.exports = function (grunt) {
 					]
 				}
 			}
+
+		,	theme_neptune:
+			{
+				options		: remove_banners
+			,	files		:
+				{
+					"resources/ext-theme-neptune/ext-theme-neptune-dev.js":src_themes_neptune
+				}
+			}
+
+		,	theme_neptune_license:
+			{
+				options		: include_banners
+			,	files		:
+				{
+					"resources/ext-theme-neptune/ext-theme-neptune-dev.js"		:
+					[
+						"file-header.js"
+					,	"resources/ext-theme-neptune/ext-theme-neptune-dev.js"
+					]
+				,	"resources/ext-theme-neptune/ext-theme-neptune-debug.js"	:
+					[
+						"file-header.js"
+					,	"resources/ext-theme-neptune/ext-theme-neptune-debug.js"
+					]
+				,	"resources/ext-theme-neptune/ext-theme-neptune.js"			:
+					[
+						"file-header.js"
+					,	"resources/ext-theme-neptune/ext-theme-neptune.js"
+					]
+				}
+			}
 		}
-//}}}
-//{{{ remove comments and debug code.
+		//}}}
+//{{{ task: remove comments and debug code.
 	,	"string-replace":
 		{
 			test	:
@@ -722,9 +781,25 @@ module.exports = function (grunt) {
 				}
 			,	options	: replace_comment
 			}
+		,	theme_neptune_debug	:
+			{
+				files	:
+				{
+					"resources/ext-theme-neptune/ext-theme-neptune-debug.js":"resources/ext-theme-neptune/ext-theme-neptune-dev.js"
+				}
+			,	options	: replace_debug
+			}
+		,	theme_neptune_comment:
+			{
+				files	:
+				{
+					"resources/ext-theme-neptune/ext-theme-neptune-debug.js":"resources/ext-theme-neptune/ext-theme-neptune-debug.js"
+				}
+			,	options	: replace_comment
+			}
 		}
 //}}}
-//{{{ minimize.
+//{{{ task: minimize.
 	,	uglify	:
 		{
 			options	:
@@ -749,9 +824,16 @@ module.exports = function (grunt) {
 				,	"builds/ext-foundation.js"	:"builds/ext-foundation-debug.js"
 				}
 			}
+		,	theme_neptune:
+			{
+				files	:
+				{
+					"resources/ext-theme-neptune/ext-theme-neptune.js":"resources/ext-theme-neptune/ext-theme-neptune-debug.js"
+				}
+			}
 		}
 //}}}
-//{{{ create symlink.
+//{{{ task: create symlink.
 	,	symlink	:
 		{
 			options	:
@@ -785,11 +867,75 @@ module.exports = function (grunt) {
 			}
 		}
 //}}}
+//{{{ task: generate css.
+	,	sass	:
+		{
+			theme_debug:
+			{
+				options	:
+				{
+					style	:"expand"
+				,	compass	:true
+				,	quiet	:true
+				,	require	:
+					[
+						"./resources/ext-theme-base/sass/utils.rb"
+					]
+				}
+			,	files	:
+				{
+//					"resources/ext-theme-base/ext-theme-base-all-rtl-debug.css":"resources/ext-theme-base/ext-theme-base-all-rtl-debug.scss"
+//				,	"resources/ext-theme-base/ext-theme-base-all-debug.css":"resources/ext-theme-base/ext-theme-base-all-debug.scss"
+//				,	"resources/ext-theme-neutral/ext-theme-neutral-all-rtl-debug.css":"resources/ext-theme-neutral/ext-theme-neutral-all-rtl-debug.scss"
+//				,	"resources/ext-theme-neutral/ext-theme-neutral-all-debug.css":"resources/ext-theme-neutral/ext-theme-neutral-all-debug.scss"
+					"resources/ext-theme-classic/ext-theme-classic-all-rtl-debug.css":"resources/ext-theme-classic/ext-theme-classic-all-rtl-debug.scss"
+				,	"resources/ext-theme-classic/ext-theme-classic-all-debug.css":"resources/ext-theme-classic/ext-theme-classic-all-debug.scss"
+				,	"resources/ext-theme-gray/ext-theme-gray-all-rtl-debug.css":"resources/ext-theme-gray/ext-theme-gray-all-rtl-debug.scss"
+				,	"resources/ext-theme-gray/ext-theme-gray-all-debug.css":"resources/ext-theme-gray/ext-theme-gray-all-debug.scss"
+				,	"resources/ext-theme-access/ext-theme-access-all-rtl-debug.css":"resources/ext-theme-access/ext-theme-access-all-rtl-debug.scss"
+				,	"resources/ext-theme-access/ext-theme-access-all-debug.css":"resources/ext-theme-access/ext-theme-access-all-debug.scss"
+				,	"resources/ext-theme-neptune/ext-theme-neptune-all-rtl-debug.css":"resources/ext-theme-neptune/ext-theme-neptune-all-rtl-debug.scss"
+				,	"resources/ext-theme-neptune/ext-theme-neptune-all-debug.css":"resources/ext-theme-neptune/ext-theme-neptune-all-debug.scss"
+				}
+			}
+
+		,	theme:
+			{
+				options:
+				{
+					style	:"compressed"
+				,	compass	:true
+				,	quiet	:true
+				,	require	:
+					[
+						"./resources/ext-theme-base/sass/utils.rb"
+					]
+				}
+			,	files	:
+				{
+//					"resources/ext-theme-base/ext-theme-base-all-rtl.css":"resources/ext-theme-base/ext-theme-base-all-rtl-debug.scss"
+//				,	"resources/ext-theme-base/ext-theme-base-all.css":"resources/ext-theme-base/ext-theme-base-all-debug.scss"
+//				,	"resources/ext-theme-neutral/ext-theme-neutral-all-rtl.css":"resources/ext-theme-neutral/ext-theme-neutral-all-rtl-debug.scss"
+//				,	"resources/ext-theme-neutral/ext-theme-neutral-all.css":"resources/ext-theme-neutral/ext-theme-neutral-all-debug.scss"
+					"resources/ext-theme-classic/ext-theme-classic-all-rtl.css":"resources/ext-theme-classic/ext-theme-classic-all-rtl-debug.scss"
+				,	"resources/ext-theme-classic/ext-theme-classic-all.css":"resources/ext-theme-classic/ext-theme-classic-all-debug.scss"
+				,	"resources/ext-theme-gray/ext-theme-gray-all-rtl.css":"resources/ext-theme-gray/ext-theme-gray-all-rtl-debug.scss"
+				,	"resources/ext-theme-gray/ext-theme-gray-all.css":"resources/ext-theme-gray/ext-theme-gray-all-debug.scss"
+				,	"resources/ext-theme-access/ext-theme-access-all-rtl.css":"resources/ext-theme-access/ext-theme-access-all-rtl-debug.scss"
+				,	"resources/ext-theme-access/ext-theme-access-all.css":"resources/ext-theme-access/ext-theme-access-all-debug.scss"
+				,	"resources/ext-theme-neptune/ext-theme-neptune-all-rtl.css":"resources/ext-theme-neptune/ext-theme-neptune-all-rtl-debug.scss"
+				,	"resources/ext-theme-neptune/ext-theme-neptune-all.css":"resources/ext-theme-neptune/ext-theme-neptune-all-debug.scss"
+				}
+			}
+		}
+//}}}
+//{{{ task: clean
 	,	clean	:
 		[
 			"builds/"
 		,	"docs/"
 		]
+//}}}
 	});
 
 //{{{ Load the plugins.
@@ -798,35 +944,49 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks ("grunt-string-replace");
 	grunt.loadNpmTasks ("grunt-contrib-clean");
 	grunt.loadNpmTasks ("grunt-contrib-symlink");
+	grunt.loadNpmTasks ("grunt-contrib-sass");
 //}}}
+
 //{{{ Register tasks.
 	grunt.registerTask ("test",
+		"Test grunt script.",
 		[
 			"concat:test"
-			,"string-replace:test"
-			,"string-replace:test_comment"
-			,"uglify:test"
-			,"concat:test_add_license"
+		,	"string-replace:test"
+		,	"string-replace:test_comment"
+		,	"uglify:test"
+		,	"concat:test_add_license"
 		]);
 
 	grunt.registerTask ("combine",
 		[
 			"concat:dev_all"
-			,"concat:dev_all_min_rtl"
+		,	"concat:dev_all_min_rtl"
 		]);
 
 	grunt.registerTask ("strip",
 		[
 			"string-replace:debug"
-			,"string-replace:comment"
+		,	"string-replace:comment"
+		]);
+
+	grunt.registerTask ("themes",
+		[
+			"sass"
+		,	"concat:theme_neptune"
+		,	"string-replace:theme_neptune_debug"
+		,	"string-replace:theme_neptune_comment"
+		,	"uglify:theme_neptune"
+		,	"concat:theme_neptune_license"
 		]);
 
 	grunt.registerTask ("default",
 		[
-			 "combine"
-			,"strip"
-			,"uglify:all"
-			,"concat:add_license"
+			"combine"
+		,	"strip"
+		,	"uglify:all"
+		,	"concat:add_license"
+		,	"themes"
 		]);
 //}}}
 };
