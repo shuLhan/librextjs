@@ -896,6 +896,8 @@ module.exports = function (grunt) {
 				,	"resources/ext-theme-access/ext-theme-access-all-debug.css":"resources/ext-theme-access/ext-theme-access-all-debug.scss"
 				,	"resources/ext-theme-neptune/ext-theme-neptune-all-rtl-debug.css":"resources/ext-theme-neptune/ext-theme-neptune-all-rtl-debug.scss"
 				,	"resources/ext-theme-neptune/ext-theme-neptune-all-debug.css":"resources/ext-theme-neptune/ext-theme-neptune-all-debug.scss"
+				,	"resources/ext-theme-neptune-charcoal/ext-theme-neptune-charcoal-all-rtl-debug.css":"resources/ext-theme-neptune-charcoal/ext-theme-neptune-charcoal-all-rtl-debug.scss"
+				,	"resources/ext-theme-neptune-charcoal/ext-theme-neptune-charcoal-all-debug.css":"resources/ext-theme-neptune-charcoal/ext-theme-neptune-charcoal-all-debug.scss"
 				}
 			}
 
@@ -925,6 +927,8 @@ module.exports = function (grunt) {
 				,	"resources/ext-theme-access/ext-theme-access-all.css":"resources/ext-theme-access/ext-theme-access-all-debug.scss"
 				,	"resources/ext-theme-neptune/ext-theme-neptune-all-rtl.css":"resources/ext-theme-neptune/ext-theme-neptune-all-rtl-debug.scss"
 				,	"resources/ext-theme-neptune/ext-theme-neptune-all.css":"resources/ext-theme-neptune/ext-theme-neptune-all-debug.scss"
+				,	"resources/ext-theme-neptune-charcoal/ext-theme-neptune-charcoal-all-rtl.css":"resources/ext-theme-neptune-charcoal/ext-theme-neptune-charcoal-all-rtl-debug.scss"
+				,	"resources/ext-theme-neptune-charcoal/ext-theme-neptune-charcoal-all.css":"resources/ext-theme-neptune-charcoal/ext-theme-neptune-charcoal-all-debug.scss"
 				}
 			}
 		}

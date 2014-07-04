@@ -60,7 +60,36 @@
  * but this can be changed by changing the default value of $include-missing-images to
  * be true.
  */
+/*
+$font-size: 12px !default;
+$font-family: sans-serif !default;
+$menu-component-margin: 2px !default;
+*/
 /* including package ext-theme-neutral */
+/*
+$include-default-uis: true !default;
+
+$base-color: #C0D4ED !default;
+
+$datepicker-base-color: $base-color !default;
+$datepicker-column-header-background-color: adjust-color($datepicker-base-color, $hue: -1.19deg, $saturation: 22.222%, $lightness: 8.824%) !default; //#dfecfb
+$datepicker-border-color: adjust-color($datepicker-base-color, $hue: 5.926deg, $saturation: 4.444%, $lightness: -57.647%) !default; //#1b376c
+$datepicker-item-hover-background-color: adjust-color($datepicker-base-color, $hue: -0.606deg, $saturation: 38.73%, $lightness: 9.02%) !default; //#ddecfe
+$datepicker-item-selected-background-color: adjust-color($datepicker-base-color, $hue: 0.267deg, $saturation: -4.535%, $lightness: 6.275%) !default;
+$datepicker-item-selected-border-color: adjust-color($datepicker-base-color, $hue: 0.853deg, $saturation: 5.008%, $lightness: -11.961%) !default; //#8db2e3
+$datepicker-header-background-color: adjust-color($datepicker-base-color, $hue: 5.768deg, $saturation: 0.419%, $lightness: -52.941%) !default; //#23427c
+$datepicker-column-header-color: adjust-color($datepicker-base-color, $hue: 5.586deg, $saturation: -4.167%, $lightness: -55.882%) !default; //#233d6d
+$datepicker-column-header-border-color: darken($datepicker-column-header-background-color, 10) !default;
+$datepicker-item-today-border-color: darkred !default;
+$datepicker-footer-border-color: $datepicker-column-header-border-color !default;
+
+$form-checkboxgroup-alt-background: adjust-color($base-color, $hue: 2.667deg, $saturation: -7.168%, $lightness: 3.725%) !default;
+$form-checkboxgroup-alt-border-top: 1px dotted adjust-color($base-color, $hue: 17.193deg, $saturation: -40.827%, $lightness: -9.412%) !default;
+$form-checkboxgroup-alt-border-bottom: 1px dotted adjust-color($base-color, $hue: 17.193deg, $saturation: -40.827%, $lightness: -9.412%) !default;
+
+$resizer-handle-size: 6px !default;
+$resizer-handle-border-radius: null !default;
+*/
 /* including package ext-theme-classic */
 /* including package ext-theme-classic */
 /* including package ext-theme-neutral */
@@ -4351,7 +4380,7 @@ div.x-editor {
   padding-left: 20px;
   white-space: nowrap;
   color: #000;
-  font: normal 11px sans-serif;
+  font: normal 11px tahoma, arial, verdana, sans-serif;
   border: 1px solid;
   border-color: #ddd #bbb #bbb #ddd;
   background-color: #fff; }
@@ -4899,8 +4928,6 @@ td.x-grid-rowwrap .x-grid-cell {
   white-space: nowrap;
   overflow: hidden; }
 
-.x-menu-item-cmp {
-  margin: 2px; }
 .x-menu-item-cmp .x-field-label-cell {
   vertical-align: middle; }
 
@@ -5096,7 +5123,7 @@ a.x-tab {
 .x-body {
   color: black;
   font-size: 12px;
-  font-family: sans-serif; }
+  font-family: tahoma, arial, verdana, sans-serif; }
 
 .x-animating-size, .x-collapsed {
   overflow: hidden !important; }
@@ -5151,7 +5178,7 @@ a.x-tab {
   border-color: #a3bad9;
   background-color: #eeeeee;
   color: #222222;
-  font: normal 11px sans-serif; }
+  font: normal 11px tahoma, arial, verdana, sans-serif; }
 
 .x-mask-msg-text {
   padding: 5px 5px 5px 20px;
@@ -5523,7 +5550,7 @@ body.x-nbr .x-btn-default-small-frameInfo {
 .x-btn-default-small .x-btn-inner {
   font-size: 11px;
   font-weight: normal;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   color: #333333;
   padding: 0 4px; }
 .x-btn-default-small .x-btn-arrow {
@@ -5828,7 +5855,7 @@ body.x-nbr .x-btn-default-medium-frameInfo {
 .x-btn-default-medium .x-btn-inner {
   font-size: 11px;
   font-weight: normal;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   color: #333333;
   padding: 0 3px; }
 .x-btn-default-medium .x-btn-arrow {
@@ -6133,7 +6160,7 @@ body.x-nbr .x-btn-default-large-frameInfo {
 .x-btn-default-large .x-btn-inner {
   font-size: 11px;
   font-weight: normal;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   color: #333333;
   padding: 0 3px; }
 .x-btn-default-large .x-btn-arrow {
@@ -6431,7 +6458,7 @@ body.x-nbr .x-btn-default-toolbar-small-frameInfo {
 .x-btn-default-toolbar-small .x-btn-inner {
   font-size: 11px;
   font-weight: normal;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   color: #333333;
   padding: 0 4px; }
 .x-btn-default-toolbar-small .x-btn-arrow {
@@ -6726,7 +6753,7 @@ body.x-nbr .x-btn-default-toolbar-medium-frameInfo {
 .x-btn-default-toolbar-medium .x-btn-inner {
   font-size: 11px;
   font-weight: normal;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   color: #333333;
   padding: 0 3px; }
 .x-btn-default-toolbar-medium .x-btn-arrow {
@@ -7021,7 +7048,7 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
 .x-btn-default-toolbar-large .x-btn-inner {
   font-size: 11px;
   font-weight: normal;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   color: #333333;
   padding: 0 3px; }
 .x-btn-default-toolbar-large .x-btn-arrow {
@@ -7296,7 +7323,7 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
   margin: 0 6px 0 4px;
   color: #4c4c4c;
   line-height: 16px;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   font-size: 11px;
   font-weight: normal; }
 
@@ -7574,7 +7601,7 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
   color: #04408c;
   font-size: 11px;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   line-height: 15px;
   padding: 0 2px 1px;
   text-transform: none; }
@@ -7745,7 +7772,7 @@ body.x-nbr .x-btn-default-toolbar-large-frameInfo {
   color: #04408c;
   font-size: 11px;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   line-height: 15px;
   padding: 0 2px 1px;
   text-transform: none; }
@@ -9190,7 +9217,7 @@ body.x-nbr .x-tip-form-invalid-frameInfo {
   background-color: #c2d8f0; }
 
 .x-btn-group-header-text-container-default {
-  font: normal 11px sans-serif;
+  font: normal 11px tahoma, arial, verdana, sans-serif;
   line-height: 15px;
   color: #3e6aaa; }
 
@@ -9392,7 +9419,7 @@ body.x-nbr .x-btn-group-default-framed-notitle-frameInfo {
   background-color: #c2d8f0; }
 
 .x-btn-group-header-text-container-default-framed {
-  font: normal 11px sans-serif;
+  font: normal 11px tahoma, arial, verdana, sans-serif;
   line-height: 15px;
   color: #3e6aaa; }
 
@@ -9660,7 +9687,7 @@ body.x-nbr .x-window-default-frameInfo {
   color: #04468c;
   font-weight: bold;
   line-height: 15px;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   font-size: 11px;
   padding: 0 2px 1px;
   text-transform: none; }
@@ -10445,7 +10472,7 @@ body.x-nbr .x-window-header-default-collapsed-left-frameInfo {
 .x-form-invalid-under {
   padding: 2px 2px 2px 20px;
   color: #c0272b;
-  font: normal 11px sans-serif;
+  font: normal 11px tahoma, arial, verdana, sans-serif;
   line-height: 16px;
   background: no-repeat 0 2px;
   background-image: url(images/form/exclamation.gif); }
@@ -10462,10 +10489,10 @@ div.x-lbl-top-err-icon {
 
 .x-form-item-label {
   color: black;
-  font: normal 12px/14px sans-serif;
+  font: normal 12px/14px tahoma, arial, verdana, sans-serif;
   margin-top: 4px; }
 .x-toolbar-item .x-form-item-label {
-  font: normal 11px/13px sans-serif;
+  font: normal 11px/13px tahoma, arial, verdana, sans-serif;
   margin-top: 4px; }
 
 .x-autocontainer-form-item, .x-anchor-form-item, .x-vbox-form-item, .x-table-form-item {
@@ -10480,7 +10507,7 @@ div.x-lbl-top-err-icon {
   color: black; }
 
 .x-form-item, .x-form-field {
-  font: normal 12px sans-serif; }
+  font: normal 12px tahoma, arial, verdana, sans-serif; }
 
 .x-form-type-text textarea.x-form-invalid-field, .x-form-type-text input.x-form-invalid-field, .x-form-type-password textarea.x-form-invalid-field, .x-form-type-password input.x-form-invalid-field, .x-form-type-number textarea.x-form-invalid-field, .x-form-type-number input.x-form-invalid-field, .x-form-type-email textarea.x-form-invalid-field, .x-form-type-email input.x-form-invalid-field, .x-form-type-search textarea.x-form-invalid-field, .x-form-type-search input.x-form-invalid-field, .x-form-type-tel textarea.x-form-invalid-field, .x-form-type-tel input.x-form-invalid-field {
   background-color: white;
@@ -10532,12 +10559,12 @@ div.x-lbl-top-err-icon {
   height: 20px; }
 
 .x-form-display-field {
-  font: normal 12px/14px sans-serif;
+  font: normal 12px/14px tahoma, arial, verdana, sans-serif;
   color: black;
   margin-top: 4px; }
 .x-toolbar-item .x-form-display-field {
   margin-top: 4px;
-  font: normal 11px/13px sans-serif; }
+  font: normal 11px/13px tahoma, arial, verdana, sans-serif; }
 
 .x-message-box .x-window-body {
   background-color: #ced9e7;
@@ -10587,9 +10614,9 @@ div.x-lbl-top-err-icon {
 /* boxLabel */
 .x-form-cb-label {
   margin-top: 4px;
-  font: normal 12px/14px sans-serif; }
+  font: normal 12px/14px tahoma, arial, verdana, sans-serif; }
 .x-toolbar-item .x-form-cb-label {
-  font: normal 11px/13px sans-serif;
+  font: normal 11px/13px tahoma, arial, verdana, sans-serif;
   margin-top: 4px; }
 
 .x-form-cb-label-before {
@@ -10643,7 +10670,7 @@ div.x-lbl-top-err-icon {
   padding: 1px 0; }
 
 .x-fieldset-header-text {
-  font: 11px/14px bold sans-serif;
+  font: 11px/14px bold tahoma, arial, verdana, sans-serif;
   color: #15428b;
   padding: 1px 0; }
 
@@ -10920,7 +10947,7 @@ a.x-datepicker-arrow:hover {
 .x-datepicker-column-header {
   width: 25px;
   color: #233d6d;
-  font: normal 10px sans-serif;
+  font: normal 10px tahoma, arial, verdana, sans-serif;
   text-align: right;
   border-width: 0 0 1px;
   border-style: solid;
@@ -10945,7 +10972,7 @@ a.x-datepicker-arrow:hover {
 
 .x-datepicker-date {
   padding: 0 4px 0 0;
-  font: normal 11px sans-serif;
+  font: normal 11px tahoma, arial, verdana, sans-serif;
   color: black;
   cursor: pointer;
   line-height: 18px; }
@@ -11014,7 +11041,7 @@ a.x-datepicker-date:hover {
 
 .x-monthpicker-item {
   margin: 5px 0 4px;
-  font: normal 11px sans-serif;
+  font: normal 11px tahoma, arial, verdana, sans-serif;
   text-align: center; }
 
 .x-monthpicker-item-inner {
@@ -11203,7 +11230,7 @@ a.x-color-picker-item:hover {
   font-family: inherit; }
 
 .x-html-editor-wrap textarea {
-  font: normal 12px sans-serif;
+  font: normal 12px tahoma, arial, verdana, sans-serif;
   background-color: white;
   resize: none; }
 
@@ -11217,10 +11244,10 @@ a.x-color-picker-item:hover {
   padding: 10px;
   color: gray;
   background-color: white;
-  font: normal 11px sans-serif; }
+  font: normal 11px tahoma, arial, verdana, sans-serif; }
 
 .x-grid-cell {
-  font: normal 11px/13px sans-serif;
+  font: normal 11px/13px tahoma, arial, verdana, sans-serif;
   background-color: white;
   border-color: #ededed #d0d0d0 #ededed #d0d0d0;
   border-style: solid; }
@@ -11405,7 +11432,7 @@ a.x-color-picker-item:hover {
 .x-column-header {
   border-right: 1px solid #c5c5c5;
   color: black;
-  font: normal 11px/13px sans-serif;
+  font: normal 11px/13px tahoma, arial, verdana, sans-serif;
   background-image: none;
   background-color: #c5c5c5;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9f9f9), color-stop(100%, #e3e4e6));
@@ -11531,7 +11558,7 @@ a.x-color-picker-item:hover {
 
 .x-grid-group-title {
   color: #3764a0;
-  font: bold 11px/13px sans-serif; }
+  font: bold 11px/13px tahoma, arial, verdana, sans-serif; }
 
 .x-grid-group-hd-collapsed .x-grid-group-title {
   background-image: url(images/grid/group-expand.gif); }
@@ -11546,7 +11573,7 @@ a.x-color-picker-item:hover {
   background-image: url(images/grid/group-by.gif); }
 
 .x-grid-rowbody {
-  font: normal 11px/13px sans-serif;
+  font: normal 11px/13px tahoma, arial, verdana, sans-serif;
   padding: 5px 6px 5px 6px; }
 .x-grid-no-row-lines .x-grid-row-focused .x-grid-rowbody {
   padding-top: 6px;
@@ -11570,7 +11597,7 @@ a.x-color-picker-item:hover {
   border-color: #ededed #d0d0d0 #ededed #d0d0d0;
   background-color: transparent !important;
   border-top-width: 0;
-  font: normal 11px/13px sans-serif; }
+  font: normal 11px/13px tahoma, arial, verdana, sans-serif; }
 
 .x-grid-with-row-lines .x-grid-table-summary {
   border: 0; }
@@ -11589,7 +11616,7 @@ a.x-color-picker-item:hover {
   background-image: url(images/grid/hmenu-unlock.gif); }
 
 .x-grid-editor .x-form-text {
-  font: normal 11px/15px sans-serif;
+  font: normal 11px/15px tahoma, arial, verdana, sans-serif;
   padding: 1px 5px 2px 5px;
   height: 20px; }
 .x-content-box .x-grid-editor .x-form-text {
@@ -11608,7 +11635,7 @@ a.x-color-picker-item:hover {
 .x-grid-editor .x-form-display-field-body {
   height: 20px; }
 .x-grid-editor .x-form-display-field {
-  font: normal 11px/15px sans-serif;
+  font: normal 11px/15px tahoma, arial, verdana, sans-serif;
   padding: 2px 6px 3px 6px;
   text-overflow: ellipsis; }
 .x-grid-editor .x-form-action-col-field {
@@ -11875,7 +11902,7 @@ body.x-nbr .x-grid-row-editor-buttons-default-top-frameInfo {
 .x-accordion-hd .x-panel-header-text-container {
   color: black;
   font-weight: normal;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   text-transform: none; }
 
 .x-accordion-item {
@@ -13359,7 +13386,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 .x-tab-default .x-tab-inner {
   font-size: 11px;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: tahoma, arial, verdana, sans-serif;
   color: #416da3;
   line-height: 13px; }
 .x-tab-default .x-tab-icon-el {
