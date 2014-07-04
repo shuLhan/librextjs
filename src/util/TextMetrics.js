@@ -115,7 +115,7 @@ Ext.define('Ext.util.TextMetrics', {
         
         me.el = Ext.get(el);
         me.measure.setStyle(
-            me.el.getStyles('font-size','font-style', 'font-weight', 'font-family','line-height', 'text-transform', 'letter-spacing')
+            me.el.getStyles('font-size','font-style', 'font-weight', 'font-family','line-height', 'text-transform', 'letter-spacing', 'word-wrap')
         );
     },
     
