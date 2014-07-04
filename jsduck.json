@@ -12,6 +12,7 @@
 		"locale"
 	,	"debug"
 	]
+,	"--eg-iframe"		: "resources/docs/eg-iframe.html"
 ,	"--images"			: "resources/docs/images"
 ,	"--builtin-classes"	: true
 ,	"--output"			: "docs"

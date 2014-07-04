@@ -1,3 +1,6 @@
+/.sass-cache
+/.sencha
+/cmd
 /builds
 /docs
 /node_modules
