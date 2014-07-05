@@ -19,6 +19,8 @@
     "grunt-contrib-sass": "^0.7.3",
     "grunt-contrib-symlink": "^0.3.0",
     "grunt-contrib-uglify": "^0.5.0",
-    "grunt-string-replace": "^0.2.7"
+    "grunt-newer": "^0.7.0",
+    "grunt-string-replace": "^0.2.7",
+    "load-grunt-config": "^0.10.0"
   }
 }

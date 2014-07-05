@@ -1,0 +1,51 @@
+{
+	"test":
+	[
+  		"newer:concat:test"
+	,	"newer:string-replace:test"
+	,	"newer:uglify:test"
+	,	"newer:concat:test_license"
+	]
+
+,	"development":
+	[
+		"newer:concat:dev_all"
+	,	"newer:concat:dev_all_min_rtl"
+	,	"newer:concat:dev_license"
+	]
+
+,	"debug":
+	[
+		"newer:string-replace:all"
+	,	"newer:concat:debug_license"
+	]
+
+,	"production":
+	[
+		"newer:uglify:all"
+	,	"newer:concat:production_license"
+	]
+
+,	"themes"	:
+	[
+		"newer:sass"
+	,	"newer:concat:themes"
+	,	"newer:string-replace:themes"
+	,	"newer:uglify:themes"
+	,	"newer:concat:themes_license"
+	]
+
+,	"cleans"	:
+	[
+		"clean:all"
+	]
+
+,	"default"	:
+	[
+		"development"
+	,	"debug"
+	,	"production"
+	,	"themes"
+	,	"symlink:all"
+	]
+}
