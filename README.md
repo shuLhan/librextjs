@@ -48,4 +48,6 @@ Greater version maybe work.
 
 - [x] Built css
 - [x] Include guide in docs
-- [ ] Include example in docs
+- [x] Include example in docs
+
+It's time to merge all fixed bugs in [Ext:Bugs](http://www.sencha.com/forum/forumdisplay.php?80-Ext-Bugs).
