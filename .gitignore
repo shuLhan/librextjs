@@ -4,6 +4,8 @@
 /builds
 /docs
 /node_modules
+/resources/ext-theme-*/*.css
+/resources/ext-theme-*/*.js
 /build.xml
 /*.js
 /log

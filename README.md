@@ -47,5 +47,5 @@ Greater version maybe work.
 ## TODO
 
 - [x] Built css
-- [ ] Include guide in docs
+- [x] Include guide in docs
 - [ ] Include example in docs

@@ -46,6 +46,6 @@
 	,	"debug"
 	,	"production"
 	,	"themes"
-	,	"symlink:all"
+	,	"newer:symlink:all"
 	]
 }
