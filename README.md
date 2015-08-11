@@ -1,3 +1,5 @@
+https://codeship.com/projects/0b8bcb70-226a-0133-e963-02fe1facef38/status?branch=master
+
 # Librextjs
 
 Librextjs is open source javascript framework.
